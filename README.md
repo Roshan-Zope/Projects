@@ -1,2 +1,4 @@
 # Projects
-This is my Git repository
+This is my first Git Repository.
+<br>
+Author -Roshan Zope
