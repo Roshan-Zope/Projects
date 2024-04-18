@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.PasswordField?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../styles/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controllers.LoginController">
+   <VBox prefHeight="400.0" prefWidth="200.0" styleClass="login_logo_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="67.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../images/loginImage.jpg" />
+      </ImageView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login_logo_container" text="Expense Tracker" />
+   </VBox>
+   <VBox layoutX="221.0" layoutY="25.0" prefHeight="350.0" prefWidth="350.0" styleClass="login_form_container" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Label fx:id="username_label" text="Enter Username: " />
+      <TextField fx:id="username_field" styleClass="input_field" />
+      <Label fx:id="password_label" text="Enter Password: " />
+      <PasswordField fx:id="password_field" styleClass="input_field" />
+      <Button fx:id="login_button" mnemonicParsing="false" text="Login" />
+      <Label fx:id="error_label" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have account? Signup then">
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
+      </Text>
+      <Button fx:id="signup_button" mnemonicParsing="false" prefHeight="42.0" text="Sign up" />
+   </VBox>
+</AnchorPane>

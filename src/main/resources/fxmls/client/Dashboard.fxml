@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard" stylesheets="@../../styles/dashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controllers.client.DashboardController">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select Initial Date" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="80.0" />
+   <Text fx:id="username" layoutX="18.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="username" text="Hi, Roshan" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="20.599998474121094" />
+   <Label fx:id="login_date" styleClass="date_label" text="11-04-2024" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="27.0" />
+   <Label layoutX="20.0" layoutY="50.0" prefHeight="24.0" prefWidth="176.0" styleClass="section_title" text="Expense By Category" AnchorPane.bottomAnchor="676.4" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="654.4" AnchorPane.topAnchor="50.0" />
+   <TextField fx:id="category_expenseByCategory" prefHeight="31.0" prefWidth="129.0" AnchorPane.bottomAnchor="635.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="701.0" AnchorPane.topAnchor="100.0" />
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Category: " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0" />
+   <Text layoutX="311.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Final Date" AnchorPane.topAnchor="80.0" />
+   <DatePicker fx:id="initDate_expenseByCategory" layoutX="184.0" layoutY="160.0" prefHeight="31.0" prefWidth="123.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="100.0" />
+   <DatePicker fx:id="finalDate_expenseByCategory" layoutX="311.0" layoutY="160.0" prefHeight="26.0" prefWidth="123.0" AnchorPane.topAnchor="100.0" />
+   <ListView fx:id="expense_listview" layoutX="20.0" layoutY="178.4" prefHeight="262.0" prefWidth="400.0" styleClass="transaction_listview" AnchorPane.bottomAnchor="326.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="178.0" />
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Latest Transaction" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="450.0" />
+   <ListView fx:id="latest_transaction_listview" prefHeight="250.0" prefWidth="400.0" styleClass="transaction_listview" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="480.0" />
+   <Text layoutX="726.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Add Expense" AnchorPane.rightAnchor="14.0" />
+   <VBox layoutX="485.0" layoutY="480.0" prefHeight="280.0" prefWidth="400.0" styleClass="new_expense_container" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="480.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Category: ">
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="category_addExpense">
+         <VBox.margin>
+            <Insets left="10.0" right="200.0" top="10.0" />
+         </VBox.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Amount: ">
+         <VBox.margin>
+            <Insets left="10.0" top="14.0" />
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="amount_addExpense">
+         <VBox.margin>
+            <Insets left="10.0" right="200.0" top="10.0" />
+         </VBox.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select Date: ">
+         <VBox.margin>
+            <Insets left="10.0" top="14.0" />
+         </VBox.margin>
+      </Text>
+      <DatePicker fx:id="date_addExpense">
+         <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </VBox.margin>
+      </DatePicker>
+      <Button fx:id="add_expense_button" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Add">
+         <VBox.margin>
+            <Insets left="150.0" top="15.0" />
+         </VBox.margin>
+      </Button>
+   </VBox>
+   <Text layoutX="805.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Expense Summary" AnchorPane.rightAnchor="14.0" />
+   <VBox layoutX="724.0" layoutY="96.0" prefHeight="340.0" prefWidth="400.0" styleClass="summary_view" AnchorPane.rightAnchor="14.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select Initial Date">
+         <VBox.margin>
+            <Insets left="14.0" top="14.0" />
+         </VBox.margin>
+      </Text>
+      <DatePicker fx:id="initDate_summary" prefHeight="26.0" prefWidth="132.0">
+         <VBox.margin>
+            <Insets left="14.0" top="10.0" />
+         </VBox.margin>
+      </DatePicker>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select Final Date">
+         <VBox.margin>
+            <Insets left="14.0" right="14.0" top="14.0" />
+         </VBox.margin>
+      </Text>
+      <DatePicker fx:id="finalDate_summary" layoutX="24.0" layoutY="52.0" prefHeight="26.0" prefWidth="130.0">
+         <VBox.margin>
+            <Insets left="14.0" top="10.0" />
+         </VBox.margin>
+      </DatePicker>
+      <Line endX="100.0" startX="-100.0">
+         <VBox.margin>
+            <Insets top="14.0" />
+         </VBox.margin>
+      </Line>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Expenses: ">
+         <VBox.margin>
+            <Insets left="14.0" top="14.0" />
+         </VBox.margin>
+      </Text>
+      <Label fx:id="total_expense" text="Rs. 00000">
+         <VBox.margin>
+            <Insets left="14.0" top="14.0" />
+         </VBox.margin>
+      </Label>
+      <Button fx:id="show_summary_button" mnemonicParsing="false" text="Show Total Expenses" />
+   </VBox>
+   <Button fx:id="view_button" layoutX="105.0" layoutY="143.0" mnemonicParsing="false" text="View Expenses" />
+   <Button fx:id="show_transaction_button" layoutX="149.0" layoutY="445.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="152.0" text="Show Transactions" />
+</AnchorPane>

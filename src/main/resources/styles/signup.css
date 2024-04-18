@@ -1,0 +1,45 @@
+.signup_container {
+    -fx-background-color: #EEEEEE;
+}
+
+.signup_logo_container {
+    -fx-background-color: #132A13;
+    -fx-alignment: center;
+}
+
+.signup_logo_container Text {
+    -fx-font-size: 2em;
+    -fx-fill: #FFFFFF;
+}
+
+.signup_form_container {
+    -fx-spacing: 5;
+    -fx-alignment: top_left;
+}
+
+.signup_form_container Label {
+    -fx-font-size: 1.1em;
+    -fx-font_weight: bold;
+}
+
+.input_field {
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 10;
+    -fx-font-size: 1.2em;
+}
+
+.signup_form_container Button {
+    -fx-background-color: #132A13;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 350;
+    -fx-pref-height: 40;
+    -fx-font-size: 1.2em;
+}
+
+.signup_form_container Button:hover {
+    -fx-cursor: hand;
+}
+
+.error_label {
+    -fx-text-fill: #FF0000;
+}

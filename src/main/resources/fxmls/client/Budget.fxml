@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="budget" stylesheets="@../../styles/budget.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controllers.client.BudgetController">
+   <Pane prefHeight="300.0" prefWidth="400.0" styleClass="set_budget_container" stylesheets="@../../styles/budget.css">
+      <Text layoutX="10.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Set Budget" />
+      <HBox layoutX="14.0" layoutY="24.0" prefHeight="50.0" prefWidth="282.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Initial Date: ">
+            <HBox.margin>
+               <Insets left="5.0" top="5.0" />
+            </HBox.margin>
+         </Text>
+         <DatePicker fx:id="set_budget_initDate" prefWidth="159.0">
+            <HBox.margin>
+               <Insets left="5.0" right="5.0" top="5.0" />
+            </HBox.margin>
+         </DatePicker>
+      </HBox>
+      <VBox layoutX="18.0" layoutY="86.0" prefHeight="200.0" prefWidth="245.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Category: ">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Text>
+         <TextField fx:id="set_budget_category" prefHeight="26.0" prefWidth="207.0">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </TextField>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Amount: ">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </Text>
+         <TextField fx:id="set_budget_amount">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </TextField>
+         <Button fx:id="set_budget_add_to_budget" mnemonicParsing="false" text="Add to Budget">
+            <VBox.margin>
+               <Insets left="70.0" top="20.0" />
+            </VBox.margin>
+         </Button>
+      </VBox>
+      <Button fx:id="set_budget_button" layoutX="261.0" layoutY="95.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="123.0" text="Set Budget" />
+   </Pane>
+   <Pane layoutX="425.0" prefHeight="300.0" prefWidth="400.0" styleClass="update_budget" AnchorPane.rightAnchor="20.0">
+      <Text layoutX="10.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Update Budget" />
+      <HBox layoutX="15.0" layoutY="30.0" prefHeight="44.0" prefWidth="256.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter BudgetId: ">
+            <HBox.margin>
+               <Insets left="5.0" top="5.0" />
+            </HBox.margin>
+         </Text>
+         <TextField fx:id="update_budget_budgetId" prefHeight="30.0" prefWidth="152.0">
+            <HBox.margin>
+               <Insets left="5.0" top="5.0" />
+            </HBox.margin>
+         </TextField>
+      </HBox>
+      <VBox layoutX="15.0" layoutY="74.0" prefHeight="178.0" prefWidth="200.0">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter New Category: ">
+            <VBox.margin>
+               <Insets left="10.0" />
+            </VBox.margin>
+         </Text>
+         <TextField fx:id="update_budget_new_Category">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="5.0" />
+            </VBox.margin>
+         </TextField>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Amount: ">
+            <VBox.margin>
+               <Insets left="10.0" top="5.0" />
+            </VBox.margin>
+         </Text>
+         <TextField fx:id="update_budget_amount">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="5.0" />
+            </VBox.margin>
+         </TextField>
+         <Button fx:id="update_budget_add_to_budget" mnemonicParsing="false" text="Add to Budget">
+            <VBox.margin>
+               <Insets left="50.0" top="20.0" />
+            </VBox.margin>
+            <opaqueInsets>
+               <Insets right="10.0" />
+            </opaqueInsets>
+         </Button>
+      </VBox>
+      <VBox layoutX="215.0" layoutY="74.0" prefHeight="178.0" prefWidth="180.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Existing Category: ">
+            <VBox.margin>
+               <Insets left="10.0" top="15.0" />
+            </VBox.margin>
+         </Text>
+         <TextField fx:id="update_budget_existing_category">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </TextField>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter new Amount: ">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Text>
+         <TextField fx:id="update_budget_new_amount">
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </TextField>
+         <Button fx:id="update_budget_add_to_budget2" mnemonicParsing="false" text="Add to Budget">
+            <VBox.margin>
+               <Insets left="50.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+      </VBox>
+      <Button fx:id="update_budget_button" layoutX="112.0" layoutY="259.0" mnemonicParsing="false" text="Update Budget" />
+   </Pane>
+   <Pane layoutY="322.0" prefHeight="400.0" prefWidth="850.0" styleClass="view_budget">
+      <VBox layoutX="12.0" layoutY="64.0" prefHeight="324.0" prefWidth="245.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BudgetId:">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Text>
+         <Label fx:id="view_budget_budgetid_label" prefHeight="18.0" prefWidth="134.0">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Label>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inittial Date: ">
+            <VBox.margin>
+               <Insets left="10.0" top="20.0" />
+            </VBox.margin>
+         </Text>
+         <Label fx:id="view_budget_initDate_label">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Label>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Final Date: ">
+            <VBox.margin>
+               <Insets left="10.0" top="20.0" />
+            </VBox.margin>
+         </Text>
+         <Label fx:id="view_budget_finalDate_label">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Label>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UserId: ">
+            <VBox.margin>
+               <Insets left="10.0" top="20.0" />
+            </VBox.margin>
+         </Text>
+         <Label fx:id="view_budget_userid_label" prefHeight="18.0" prefWidth="202.0">
+            <VBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+         </Label>
+         <Button fx:id="view_budget" mnemonicParsing="false" text="View Budget">
+            <VBox.margin>
+               <Insets left="10.0" top="20.0" />
+            </VBox.margin>
+         </Button>
+      </VBox>
+      <Text layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter BudgetId: " />
+      <TextField fx:id="view_budget_budgetid" layoutX="126.0" layoutY="25.0" prefWidth="131.0" />
+      <ListView fx:id="view_budget_listView" layoutX="272.0" layoutY="7.0" prefHeight="386.0" prefWidth="569.0" styleClass="budget_listview" />
+   </Pane>
+   <Text layoutX="28.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="View Budget" />
+</AnchorPane>

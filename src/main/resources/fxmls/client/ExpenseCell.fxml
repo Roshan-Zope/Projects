@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="60.0" prefWidth="647.0" styleClass="cell_container" stylesheets="@../../styles/expenseCell.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controllers.client.ExpenseCellController">
+   <Label fx:id="expense_amount" layoutX="554.0" layoutY="16.0" styleClass="expense_amount_label" text="Rs. 000000" />
+   <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" styleClass="expense_icon_container" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="11.0">
+      <Image url="@../../images/loginImage.jpg" />
+   </ImageView>
+   <Label fx:id="expense_category" layoutX="454.0" layoutY="21.0" prefHeight="18.0" prefWidth="71.0" styleClass="expense_id_label" text="grocery" />
+   <Label fx:id="expense_date" layoutX="324.0" layoutY="20.0" styleClass="expense_date_label" text="11-04-2024" />
+   <Label fx:id="expenseid" layoutX="60.0" layoutY="21.0" prefHeight="18.0" prefWidth="255.0" styleClass="expense_id_label" text="12345" />
+   <Line endX="280.29998779296875" endY="10.492898941040039" layoutX="135.0" layoutY="1.0" startX="280.29998779296875" startY="45.899986267089844" />
+</AnchorPane>

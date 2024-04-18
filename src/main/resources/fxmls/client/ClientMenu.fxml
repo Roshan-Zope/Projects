@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="180.0" stylesheets="@../../styles/clientMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controllers.client.ClientMenuController">
+   <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
+      <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <ImageView fitHeight="52.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/loginImage.jpg" />
+         </ImageView>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expense Tracker">
+            <font>
+               <Font size="8.0" />
+            </font></Text>
+      </VBox>
+      <VBox layoutY="104.0" prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.8000000000000101" AnchorPane.topAnchor="100.0">
+         <Button fx:id="dashboard_button" mnemonicParsing="false" styleClass="alt_menu_button" text="Dashboard" />
+         <Button fx:id="budget_button" mnemonicParsing="false" styleClass="alt_menu_button" text="Budget" />
+         <Button fx:id="expense_report_button" mnemonicParsing="false" styleClass="alt_menu_button" text="Report" />
+         <Line endX="100.0" startX="-100.0">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </Line>
+         <Button fx:id="profile_button" mnemonicParsing="false" styleClass="alt_menu_button" text="Profile" />
+         <Button fx:id="logout_button" mnemonicParsing="false" styleClass="alt_menu_button" text="Logout" />
+      </VBox>
+      <VBox prefHeight="120.0" prefWidth="130.0" styleClass="report_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report?" />
+         <Label text="Give your suggestions here:" />
+         <Button fx:id="report_button" mnemonicParsing="false" prefHeight="37.0" prefWidth="81.0" text="Report" />
+      </VBox>
+   </AnchorPane>
+</VBox>
