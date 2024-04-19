@@ -1,10 +1,13 @@
 package com.expensetracker.controllers.client;
 
+import com.expensetracker.controllers.EmailController;
 import com.expensetracker.controllers.LoginController;
 import com.expensetracker.models.AlertMessage;
 import com.expensetracker.models.Model;
 import com.expensetracker.models.entities.User;
+import com.expensetracker.models.services.EmailService;
 import com.expensetracker.models.services.UserService;
+import com.expensetracker.utilities.OTPGenerator;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -30,6 +33,8 @@ public class ProfileController implements Initializable {
     public Button delete_account_button;
     private static User currUser = new User();
     private final UserService userService = new UserService();
+    private String otp;
+    private final EmailController emailController = new EmailController();
 
     public static void setCurrUser(User currUser) {
         ProfileController.currUser = currUser;
@@ -49,16 +54,32 @@ public class ProfileController implements Initializable {
     }
 
     private void onSendOtp() {
-        AlertMessage.throwAlert("INFORMATION", "Information Dialog", "OTP is send successfully on email address: sampleemail@gmail.com");
+        otp = OTPGenerator.generateOTP();
+        emailController.sendEmail(currUser.getEmail(),
+                "OTP Verification",
+                "The OTP for your expense tracker account password verification is: " + otp);
+        AlertMessage.throwAlert("INFORMATION", "Information Dialog", "OTP is send successfully on email address: " + currUser.getEmail());
     }
 
     private void onChangePassword() {
         if (validateUser(oldPassword_textField.getText())) {
-            userService.update(newPassword_textField.getText());
-            AlertMessage.throwAlert("INFORMATION", "Information Dialog", "Password is updated successfully");
+            if (validateOtp(change_password_otp_textField.getText())) {
+                userService.update(newPassword_textField.getText());
+                currUser.setPasskey(newPassword_textField.getText());
+                AlertMessage.throwAlert("INFORMATION", "Information Dialog", "Password is updated successfully");
+                oldPassword_textField.setText("");
+                newPassword_textField.setText("");
+                change_password_otp_textField.setText("");
+            } else {
+                AlertMessage.throwAlert("ERROR", "Error Dialog", "Invalid otp. Please tyr again");
+            }
         } else {
             AlertMessage.throwAlert("ERROR", "Error Dialog", "Check your details");
         }
+    }
+
+    private boolean validateOtp(String OTP) {
+        return OTP.equals(otp);
     }
 
     private boolean validateUser(String password) {
@@ -71,7 +92,7 @@ public class ProfileController implements Initializable {
 
     private void onDeleteAccount() {
         if (validateUser(delete_account_password_textField.getText())) {
-            if (confirmDelete()) {
+            if (validateOtp(delete_account_otp_text_field.getText()) && confirmDelete()) {
                 userService.delete(ProfileController.getCurrUser().getId());
                 AlertMessage.throwAlert("INFORMATION", "INFORMATION Dialog", "Account removed successfully");
                 delete_account_password_textField.setText("");
@@ -79,6 +100,8 @@ public class ProfileController implements Initializable {
                 Stage stage = (Stage) delete_account_button.getScene().getWindow();
                 Model.getInstance().getViewFactory().closeStage(stage);
                 Model.getInstance().getViewFactory().showLoginWindow();
+            } else {
+                AlertMessage.throwAlert("ERROR", "Error Dialog", "Invalid otp. Please tyr again");
             }
         } else {
             AlertMessage.throwAlert("ERROR", "Error Dialog", "Check your details");
